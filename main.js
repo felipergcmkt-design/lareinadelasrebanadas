@@ -61,3 +61,52 @@ if (carousel) {
   window.addEventListener('resize', () => goTo(current, false));
   update(0);
 }
+
+const vipDeadline = document.getElementById('vip-offer-deadline');
+if (vipDeadline) {
+  const key = 'la-reina-vip-primeiro-acesso-v1';
+  const duration = 48 * 60 * 60 * 1000;
+  let firstVisit = Date.now();
+
+  try {
+    const saved = Number(localStorage.getItem(key));
+    if (Number.isFinite(saved) && saved > 0) firstVisit = saved;
+    else localStorage.setItem(key, String(firstVisit));
+  } catch {
+    try {
+      const saved = Number(sessionStorage.getItem(key));
+      if (Number.isFinite(saved) && saved > 0) firstVisit = saved;
+      else sessionStorage.setItem(key, String(firstVisit));
+    } catch {
+      // O relógio continua nesta visita se o navegador bloquear o armazenamento.
+    }
+  }
+
+  const endsAt = firstVisit + duration;
+  const countdown = document.getElementById('vip-countdown-time');
+  const label = document.getElementById('vip-countdown-label');
+  const endDate = new Date(endsAt);
+  vipDeadline.dateTime = endDate.toISOString();
+  vipDeadline.textContent = new Intl.DateTimeFormat('es-MX', {
+    day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit'
+  }).format(endDate);
+
+  let interval;
+  function updateVipCountdown() {
+    const total = Math.max(0, Math.ceil((endsAt - Date.now()) / 1000));
+    const days = Math.floor(total / 86400);
+    const hours = Math.floor((total % 86400) / 3600);
+    const minutes = Math.floor((total % 3600) / 60);
+    const seconds = total % 60;
+    const twoDigits = value => String(value).padStart(2, '0');
+    countdown.textContent = `${twoDigits(days)}d ${twoDigits(hours)}h ${twoDigits(minutes)}m ${twoDigits(seconds)}s`;
+
+    if (total === 0) {
+      label.textContent = 'Oferta finalizada';
+      if (interval) clearInterval(interval);
+    }
+  }
+
+  updateVipCountdown();
+  if (endsAt > Date.now()) interval = setInterval(updateVipCountdown, 1000);
+}
