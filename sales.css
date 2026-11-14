@@ -42,3 +42,7 @@
 .carousel-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:760px){.hero-carousel{margin-top:24px}.carousel-arrow{width:38px;height:38px;font-size:30px}.carousel-prev{left:9px}.carousel-next{right:9px}.carousel-slide .picture-tag{max-width:calc(100% - 26px)}}
 @media(prefers-reduced-motion:reduce){.carousel-dot::before{transition:none}}
+
+/* Espaço entre o carrossel e a apresentação do programa. */
+#programa.sales-section{padding-top:44px}
+@media(max-width:760px){#programa.sales-section{padding-top:30px}}
