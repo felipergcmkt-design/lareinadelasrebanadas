@@ -68,7 +68,7 @@
 
 /* Prazo individual da oferta VIP. */
 .bundle-card .bundle-subtitle{font-size:16px;line-height:1.6;color:var(--chocolate)}
-.vip-countdown{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 24px;padding:13px 16px;border:1px solid #e7c6d0;border-radius:10px;background:#f9e9ed;color:var(--chocolate)}
-.vip-countdown span{font-size:13px;font-weight:700}
-.vip-countdown strong{font-size:20px;color:var(--berry);font-variant-numeric:tabular-nums;white-space:nowrap}
-@media(max-width:760px){.bundle-card .bundle-subtitle{font-size:14px}.vip-countdown{gap:8px;padding:12px}.vip-countdown span{font-size:12px}.vip-countdown strong{font-size:16px}}
+.vip-countdown{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 24px;padding:13px 16px;border:1px solid #b88a38;border-radius:10px;background:#161616;color:#d8b45d}
+.vip-countdown span{font-size:16px;font-weight:800;letter-spacing:.04em;line-height:1.2;white-space:nowrap}
+.vip-countdown strong{font-size:20px;color:#d8b45d;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:760px){.bundle-card .bundle-subtitle{font-size:14px}.vip-countdown{gap:8px;padding:12px}.vip-countdown span{font-size:clamp(12px,3.5vw,16px)}.vip-countdown strong{font-size:clamp(12px,3.6vw,16px)}}
