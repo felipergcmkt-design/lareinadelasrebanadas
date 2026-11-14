@@ -46,3 +46,6 @@
 /* Espaço entre o carrossel e a apresentação do programa. */
 #programa.sales-section{padding-top:44px}
 @media(max-width:760px){#programa.sales-section{padding-top:30px}}
+
+/* Mantém o novo título em duas linhas no desktop. */
+@media(min-width:761px){#programa .sales-heading{max-width:1000px}}
