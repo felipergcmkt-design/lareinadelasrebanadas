@@ -27,16 +27,11 @@ function renderQuestion(focus=false){
  back.disabled=step===0;if(focus)title.focus();
 }
 function showResult(){
- const titles=['Empieza por una receta, paso a paso.','Empieza con claridad en tus números.','Tu comienzo puede tener un plan.'];
- const intros=['Buscas recetas que te ayuden a sentir más confianza. Te proponemos comenzar con una sola base y repetirla antes de ampliar tu menú.','Quieres saber cuánto necesitas y cómo poner precio. Tu primer paso puede ser calcular una producción pequeña antes de comprar.','Quieres una guía que conecte la preparación con las ventas. Tu primer paso puede ser organizar un recorrido sencillo y realista.'];
- const experience=['Como aún no has preparado para vender, empieza por una prueba antes de tomar pedidos.','Como ya preparas para tu familia, practica porciones uniformes y registra el rendimiento.','Para ganar confianza, elige una tarea pequeña que puedas practicar sin presión.'];
- document.getElementById('result-title').textContent=titles[answers[4]];document.getElementById('result-intro').textContent=intros[answers[4]]+' '+experience[answers[0]];
- const time=['Reserva un bloque después del trabajo y separa la preparación de las entregas.','Distribuye compras, preparación y entregas en los espacios que tengas disponibles.','Organiza una prueba el fin de semana, con tiempo para preparar, enfriar y presentar.'];
- const investment=['Haz una lista de los utensilios que ya tienes y de lo indispensable para tu primera receta.','Calcula ingredientes y empaque para pocas porciones antes de hacer compras.','Estima costos y consulta el interés de posibles clientes antes de producir.'];
- const sales=['Piensa en un pequeño grupo cercano y averigua qué sabores les interesan.','Prepara una foto clara y un mensaje breve para presentar tu primer menú.','Consulta el interés o toma pedidos antes de preparar más de lo necesario.'];
- const plan=document.getElementById('result-plan');plan.replaceChildren();[['01 · Cuida tu inversión',investment[answers[1]]],['02 · Encuentra tu momento',time[answers[2]]],['03 · Acércate a tu primera venta',sales[answers[3]]]].forEach(([heading,copy])=>{const article=document.createElement('article'),h3=document.createElement('h3'),p=document.createElement('p');h3.textContent=heading;p.textContent=copy;article.append(h3,p);plan.append(article);});questionScreen.hidden=true;resultScreen.hidden=false;document.getElementById('result-title').focus();
+ questionScreen.hidden=true;
+ resultScreen.hidden=false;
+ document.body.classList.add('quiz-complete');
+ document.getElementById('result-title').focus();
 }
 form.addEventListener('submit',event=>event.preventDefault());
 back.addEventListener('click',()=>{if(step>0){step--;renderQuestion(true);}});
-document.getElementById('restart-button').addEventListener('click',()=>{step=0;answers=Array(questions.length).fill(null);resultScreen.hidden=true;questionScreen.hidden=false;renderQuestion(true);});
 renderQuestion();
