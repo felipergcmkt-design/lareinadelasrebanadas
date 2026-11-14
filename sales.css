@@ -10,3 +10,8 @@
 /* Título da oferta com quebras equilibradas no celular */
 @media(max-width:760px){.sales-hero h1{font-size:clamp(30px,8vw,36px);line-height:1.13;text-align:center;max-width:100%;overflow-wrap:normal;hyphens:none}}
 @media(max-width:360px){.sales-hero h1{font-size:29px}}
+
+/* Copy de abertura em dois momentos */
+.sales-lead{max-width:760px;line-height:1.55}
+.sales-lead strong{display:inline-block;color:var(--chocolate);font-weight:700;margin-top:12px}
+@media(max-width:760px){.sales-lead{font-size:14px;line-height:1.6}.sales-lead strong{margin-top:10px}}
