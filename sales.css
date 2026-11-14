@@ -78,3 +78,5 @@
 .bundle-card .launch-button{animation:vipButtonPulse 2.4s ease-in-out infinite;transform-origin:center}
 @keyframes vipButtonPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(169,35,80,.32)}50%{transform:scale(1.025);box-shadow:0 0 0 10px rgba(169,35,80,0)}}
 @media(prefers-reduced-motion:reduce){.bundle-card .launch-button{animation:none}}
+
+.offer-guarantee{display:table;max-width:100%;margin:14px auto 0;padding:8px 14px;border:1px solid #a5d6af;border-radius:999px;background:#e6f6e9;color:#176a32;font-size:clamp(12px,3.2vw,14px);font-weight:700;line-height:1.35;text-align:center}
