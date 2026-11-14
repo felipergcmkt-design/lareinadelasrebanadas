@@ -55,7 +55,7 @@
 #programa .part-number{font-size:16px}
 #programa .sales-parts h3{font-size:32px}
 #programa .sales-parts p{font-size:17px;line-height:1.6}
-.sales-cta{font-size:18px}
+.sales-cta{font-size:18px;text-transform:uppercase}
 @media(max-width:760px){#programa .sales-heading .eyebrow{font-size:12px}#programa .part-number{font-size:15px}#programa .sales-parts h3{font-size:29px}#programa .sales-parts p{font-size:16px}.sales-cta{font-size:16px}}
 
 /* Cards de aprendizado em rosa com texto branco. */
