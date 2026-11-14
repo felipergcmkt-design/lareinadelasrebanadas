@@ -88,7 +88,7 @@ if (vipDeadline) {
   const endDate = new Date(endsAt);
   vipDeadline.dateTime = endDate.toISOString();
   vipDeadline.textContent = new Intl.DateTimeFormat('es-MX', {
-    day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit'
+    day: '2-digit', month: '2-digit', year: 'numeric'
   }).format(endDate);
 
   let interval;
