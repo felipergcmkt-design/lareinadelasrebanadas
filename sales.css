@@ -55,3 +55,7 @@
 #programa .part-number{font-size:14px}
 #programa .sales-parts p{font-size:16px;line-height:1.6}
 @media(max-width:760px){#programa .sales-heading .eyebrow{font-size:11px}#programa .part-number{font-size:13px}#programa .sales-parts p{font-size:15px}}
+
+/* Cards de aprendizado em rosa com texto branco. */
+#programa .sales-parts article{background:var(--berry);border-color:var(--berry-dark);color:#fff}
+#programa .sales-parts p,#programa .part-number{color:#fff}
