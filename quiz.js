@@ -1,19 +1,30 @@
 'use strict';
 const questions = [
-{category:'TU PUNTO DE PARTIDA',title:'¿Te gustaría empezar a vender rebanadas de pastel, aunque no tengas experiencia?',answers:['Sí, pero nunca he preparado pasteles para vender.','Ya preparo para mi familia, pero no sé cómo empezar a vender.','Tengo ganas, pero no sé si podría hacerlo.'],guidance:['Puedes comenzar por una receta base y practicar antes de ofrecer tus primeras rebanadas.','Lo que preparas en casa puede ser tu punto de partida para aprender a porcionar, calcular costos y ofrecer.','No necesitas resolverlo todo hoy. El primer paso puede ser aprender una base y practicar a tu ritmo.']},
-{category:'EMPEZAR CON LO NECESARIO',title:'¿Qué te preocupa más sobre la inversión inicial?',answers:['Necesitar equipo caro.','Tener poco dinero para comprar ingredientes.','Gastar y no recuperar mi inversión.'],guidance:['Primero conviene revisar qué tienes en tu cocina y distinguir lo indispensable de lo que puede esperar.','Un menú pequeño y una lista de compras calculada pueden ayudarte a planear una primera producción.','Calcular costos y conocer la demanda antes de producir ayuda a tomar decisiones con más información.']},
-{category:'UN COMIENZO A TU RITMO',title:'¿Cómo te imaginas acomodando este negocio en tu rutina?',answers:['Empezaría después del trabajo.','Aprovecharía algunas horas mientras me encargo de la casa.','Empezaría los fines de semana.'],guidance:['Separa tareas y planea una producción que se ajuste a tus horas disponibles.','Organizar compras, preparación y entregas por etapas puede ayudarte a aprovechar tu tiempo.','Puedes reservar un bloque para practicar y otro para organizar pedidos y entregas.']},
-{category:'TU PRIMERA VENTA',title:'¿Cuál sería tu mayor dificultad para conseguir la primera venta?',answers:['No saber a quién ofrecerle.','Sentir pena de promocionar mis productos.','Tener miedo de que nadie compre.'],guidance:['Un primer paso es identificar a personas cercanas que podrían interesarse y preguntar qué sabores prefieren.','Una foto clara, un menú pequeño y un mensaje sencillo pueden facilitar tu primera presentación.','Explorar el interés y trabajar por pedido puede reducir el riesgo de preparar más de lo necesario.']},
-{category:'LO QUE TE AYUDARÍA A EMPEZAR',title:'¿Qué te daría más confianza para comenzar?',answers:['Recetas explicadas paso a paso.','Saber cuánto gastar y cuánto cobrar.','Una guía desde la preparación hasta la primera venta.'],guidance:['Practicar una receta base es una buena forma de conocer el proceso antes de ampliar tu menú.','Tener claros los costos y el rendimiento te ayuda a evaluar un precio antes de ofrecer.','Dividir el camino en pasos pequeños permite avanzar desde la cocina hasta la presentación de tus productos.']}
+{category:'TU PUNTO DE PARTIDA',title:'¿Te gustaría empezar a vender rebanadas de pastel, aunque no tengas experiencia?',answers:['Sí, pero nunca he preparado pasteles para vender.','Ya preparo para mi familia, pero no sé cómo empezar a vender.','Tengo ganas, pero no sé si podría hacerlo.']},
+{category:'EMPEZAR CON LO NECESARIO',title:'¿Qué te preocupa más sobre la inversión inicial?',answers:['Necesitar equipo caro.','Tener poco dinero para comprar ingredientes.','Gastar y no recuperar mi inversión.']},
+{category:'UN COMIENZO A TU RITMO',title:'¿Cómo te imaginas acomodando este negocio en tu rutina?',answers:['Empezaría después del trabajo.','Aprovecharía algunas horas mientras me encargo de la casa.','Empezaría los fines de semana.']},
+{category:'TU PRIMERA VENTA',title:'¿Cuál sería tu mayor dificultad para conseguir la primera venta?',answers:['No saber a quién ofrecerle.','Sentir pena de promocionar mis productos.','Tener miedo de que nadie compre.']},
+{category:'LO QUE TE AYUDARÍA A EMPEZAR',title:'¿Qué te daría más confianza para comenzar?',answers:['Recetas explicadas paso a paso.','Saber cuánto gastar y cuánto cobrar.','Una guía desde la preparación hasta la primera venta.']}
 ];
 let step=0;let answers=Array(questions.length).fill(null);
-const form=document.getElementById('quiz-form'),answerList=document.getElementById('answers'),next=document.getElementById('next-button'),back=document.getElementById('back-button'),title=document.getElementById('question-title'),guidance=document.getElementById('answer-guidance'),questionScreen=document.getElementById('question-screen'),resultScreen=document.getElementById('result-screen');
+const form=document.getElementById('quiz-form'),answerList=document.getElementById('answers'),back=document.getElementById('back-button'),title=document.getElementById('question-title'),questionScreen=document.getElementById('question-screen'),resultScreen=document.getElementById('result-screen');
 // Keep attribution parameters; individual responses stay only in this page's memory.
 document.getElementById('offer-link').href='/oferta'+window.location.search;
 function renderQuestion(focus=false){
  const q=questions[step];document.getElementById('step-category').textContent=q.category;document.getElementById('step-count').textContent=`${step+1} de ${questions.length}`;document.getElementById('progress-fill').style.width=`${(step+1)/questions.length*100}%`;document.querySelector('.quiz-progress').setAttribute('aria-valuenow',String(step+1));title.textContent=q.title;answerList.replaceChildren();
- q.answers.forEach((text,index)=>{const label=document.createElement('label');label.className='answer-option';const input=document.createElement('input');input.type='radio';input.name='answer';input.value=String(index);input.required=true;input.checked=answers[step]===index;const span=document.createElement('span');span.textContent=text;input.addEventListener('change',()=>{answers[step]=index;next.disabled=false;guidance.textContent=q.guidance[index];});label.append(input,span);answerList.append(label);});
- next.disabled=answers[step]===null;next.firstChild.textContent=step===questions.length-1?'Ver mi primer paso ':'Continuar ';back.disabled=step===0;guidance.textContent=answers[step]===null?'':q.guidance[answers[step]];if(focus)title.focus();
+ q.answers.forEach((text,index)=>{
+  const button=document.createElement('button');button.type='button';button.className='answer-option';
+  button.setAttribute('aria-label',text);
+  if(answers[step]===index){button.classList.add('previous-answer');button.setAttribute('aria-describedby','step-count');}
+  const span=document.createElement('span');span.textContent=text;
+  const arrow=document.createElement('span');arrow.className='answer-arrow';arrow.textContent='→';arrow.setAttribute('aria-hidden','true');
+  button.append(span,arrow);
+  button.addEventListener('click',()=>{
+   answers[step]=index;
+   if(step<questions.length-1){step++;renderQuestion(true);}else showResult();
+  });answerList.append(button);
+ });
+ back.disabled=step===0;if(focus)title.focus();
 }
 function showResult(){
  const titles=['Empieza por una receta, paso a paso.','Empieza con claridad en tus números.','Tu comienzo puede tener un plan.'];
@@ -25,7 +36,7 @@ function showResult(){
  const sales=['Piensa en un pequeño grupo cercano y averigua qué sabores les interesan.','Prepara una foto clara y un mensaje breve para presentar tu primer menú.','Consulta el interés o toma pedidos antes de preparar más de lo necesario.'];
  const plan=document.getElementById('result-plan');plan.replaceChildren();[['01 · Cuida tu inversión',investment[answers[1]]],['02 · Encuentra tu momento',time[answers[2]]],['03 · Acércate a tu primera venta',sales[answers[3]]]].forEach(([heading,copy])=>{const article=document.createElement('article'),h3=document.createElement('h3'),p=document.createElement('p');h3.textContent=heading;p.textContent=copy;article.append(h3,p);plan.append(article);});questionScreen.hidden=true;resultScreen.hidden=false;document.getElementById('result-title').focus();
 }
-form.addEventListener('submit',event=>{event.preventDefault();if(answers[step]===null)return;if(step<questions.length-1){step++;renderQuestion(true);}else showResult();});
+form.addEventListener('submit',event=>event.preventDefault());
 back.addEventListener('click',()=>{if(step>0){step--;renderQuestion(true);}});
 document.getElementById('restart-button').addEventListener('click',()=>{step=0;answers=Array(questions.length).fill(null);resultScreen.hidden=true;questionScreen.hidden=false;renderQuestion(true);});
 renderQuestion();
