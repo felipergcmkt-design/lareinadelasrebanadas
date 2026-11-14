@@ -85,3 +85,7 @@
 
 #oferta.sales-section{padding-top:42px}
 @media(max-width:760px){#oferta.sales-section{padding-top:26px}}
+
+#programa.sales-section{padding-bottom:22px}
+#oferta.sales-section{padding-top:18px}
+@media(max-width:760px){#programa.sales-section{padding-bottom:12px}#oferta.sales-section{padding-top:12px}}
