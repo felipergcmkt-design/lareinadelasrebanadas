@@ -80,3 +80,5 @@
 @media(prefers-reduced-motion:reduce){.bundle-card .launch-button{animation:none}}
 
 .offer-guarantee{display:table;max-width:100%;margin:14px auto 0;padding:8px 14px;border:1px solid #a5d6af;border-radius:999px;background:#e6f6e9;color:#176a32;font-size:clamp(12px,3.2vw,14px);font-weight:700;line-height:1.35;text-align:center}
+
+.bundle-card .offer-guarantee{display:table;margin:14px auto 0;font-size:clamp(12px,3.2vw,14px)}
