@@ -51,10 +51,12 @@
 @media(min-width:761px){#programa .sales-heading{max-width:1000px}}
 
 /* Textos de apoio da seção de aprendizado mais legíveis. */
-#programa .sales-heading .eyebrow{font-size:12px}
-#programa .part-number{font-size:14px}
-#programa .sales-parts p{font-size:16px;line-height:1.6}
-@media(max-width:760px){#programa .sales-heading .eyebrow{font-size:11px}#programa .part-number{font-size:13px}#programa .sales-parts p{font-size:15px}}
+#programa .sales-heading .eyebrow{font-size:13px}
+#programa .part-number{font-size:16px}
+#programa .sales-parts h3{font-size:32px}
+#programa .sales-parts p{font-size:17px;line-height:1.6}
+.sales-cta{font-size:18px}
+@media(max-width:760px){#programa .sales-heading .eyebrow{font-size:12px}#programa .part-number{font-size:15px}#programa .sales-parts h3{font-size:29px}#programa .sales-parts p{font-size:16px}.sales-cta{font-size:16px}}
 
 /* Cards de aprendizado em rosa com texto branco. */
 #programa .sales-parts article{background:var(--berry);border-color:var(--berry-dark);color:#fff}
