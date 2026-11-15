@@ -1,7 +1,7 @@
 'use strict';
 const questions = [
 {category:'TU PUNTO DE PARTIDA',title:'¿Qué edad tienes?',answers:['De 18 a 34 años.','35 años o más.']},
-{category:'TU DISPONIBILIDAD',title:'¿Cuánto tiempo podrías dedicar cada semana a preparar tus primeras rebanadas?',answers:['De 1 a 3 horas por semana.','4 horas o más por semana.']},
+{category:'TU DISPONIBILIDAD',title:'¿Cuánto tiempo podrías dedicar cada semana a preparar tus primeras rebanadas?',answers:['De 1 a 3 horas por semana.','El tiempo que sea necesario.']},
 {category:'¿ESTÁS LISTA PARA EMPEZAR?',title:'Si pudieras pasar de principiante a profesional, ¿estarías lista para comenzar?',answers:['Quiero aprender paso a paso y empezar ahora.','Quiero aprender, pero necesito más tiempo para organizarme.']}
 ];
 let step=0;let answers=Array(questions.length).fill(null);
