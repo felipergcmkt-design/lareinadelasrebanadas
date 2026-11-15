@@ -2,9 +2,7 @@
 const questions = [
 {category:'TU PUNTO DE PARTIDA',title:'¿Te gustaría empezar a vender rebanadas de pastel, aunque no tengas experiencia?',answers:['Sí, pero nunca he preparado pasteles para vender.','Ya preparo para mi familia, pero no sé cómo empezar a vender.','Tengo ganas, pero no sé si podría hacerlo.']},
 {category:'EMPEZAR CON LO NECESARIO',title:'¿Qué te preocupa más sobre la inversión inicial?',answers:['Necesitar equipo caro.','Tener poco dinero para comprar ingredientes.','Gastar y no recuperar mi inversión.']},
-{category:'UN COMIENZO A TU RITMO',title:'¿Cómo te imaginas acomodando este negocio en tu rutina?',answers:['Empezaría después del trabajo.','Aprovecharía algunas horas mientras me encargo de la casa.','Empezaría los fines de semana.']},
 {category:'TU PRIMERA VENTA',title:'¿Cuál sería tu mayor dificultad para conseguir la primera venta?',answers:['No saber a quién ofrecerle.','Sentir pena de promocionar mis productos.','Tener miedo de que nadie compre.']},
-{category:'LO QUE TE AYUDARÍA A EMPEZAR',title:'¿Qué te daría más confianza para comenzar?',answers:['Recetas explicadas paso a paso.','Saber cuánto gastar y cuánto cobrar.','Una guía desde la preparación hasta la primera venta.']}
 ];
 let step=0;let answers=Array(questions.length).fill(null);
 const form=document.getElementById('quiz-form'),answerList=document.getElementById('answers'),back=document.getElementById('back-button'),title=document.getElementById('question-title'),questionScreen=document.getElementById('question-screen'),resultScreen=document.getElementById('result-screen');
