@@ -4,7 +4,7 @@ const checkoutLink = document.getElementById('comprar-ahora');
 if (checkoutLink) {
   const checkoutUrl = new URL(checkoutLink.href);
   const campaignParams = new URLSearchParams(window.location.search);
-  const allowedParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id', 'src', 'sck'];
+  const allowedParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id', 'src', 'sck', 'fbclid'];
   allowedParams.forEach(key => {
     const value = campaignParams.get(key);
     if (value && !checkoutUrl.searchParams.has(key)) checkoutUrl.searchParams.set(key, value);
