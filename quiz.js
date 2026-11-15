@@ -2,7 +2,7 @@
 const questions = [
 {category:'TU PUNTO DE PARTIDA',title:'¿Qué edad tienes?',answers:['De 18 a 34 años.','35 años o más.']},
 {category:'TU DISPONIBILIDAD',title:'¿Cuánto tiempo podrías dedicar cada semana a preparar tus primeras rebanadas?',answers:['De 1 a 3 horas por semana.','4 horas o más por semana.']},
-{category:'¿ESTÁS LISTA PARA EMPEZAR?',title:'Si pudieras pasar de principiante a profesional, ¿estarías lista para comenzar?',answers:['Sí, quiero empezar ahora.','Quiero aprender paso a paso antes de comenzar.']}
+{category:'¿ESTÁS LISTA PARA EMPEZAR?',title:'Si pudieras pasar de principiante a profesional, ¿estarías lista para comenzar?',answers:['Quiero aprender paso a paso y empezar ahora.','Quiero aprender, pero necesito más tiempo para organizarme.']}
 ];
 let step=0;let answers=Array(questions.length).fill(null);
 const form=document.getElementById('quiz-form'),answerList=document.getElementById('answers'),back=document.getElementById('back-button'),title=document.getElementById('question-title'),questionScreen=document.getElementById('question-screen'),resultScreen=document.getElementById('result-screen');
