@@ -93,3 +93,34 @@
 .bundle-card .check-list{font-size:17px;line-height:1.35}
 .bundle-card .check-list li{padding-top:5px;padding-bottom:5px}
 @media(max-width:760px){.bundle-card .check-list{font-size:15px;line-height:1.4}.bundle-card .check-list li{padding-top:5px;padding-bottom:5px}}
+
+
+/* Livros abertos nas três etapas do programa. */
+#contenido .curriculum-intro-illustrated{
+ position:relative;isolation:isolate;display:flex;align-items:flex-start;
+ min-height:530px;overflow:hidden;background:var(--berry);color:#fff;
+}
+#contenido .curriculum-book{
+ position:absolute;inset:0;z-index:-2;width:100%;height:100%;
+ object-fit:cover;object-position:center bottom;
+}
+#contenido .curriculum-intro-illustrated::after{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background:linear-gradient(180deg,rgba(169,35,80,.99) 0%,rgba(169,35,80,.97) 180px,rgba(169,35,80,.94) 260px,rgba(169,35,80,.30) 355px,rgba(169,35,80,.03) 100%);
+}
+#contenido .curriculum-intro-copy{position:relative;max-width:370px}
+#contenido .curriculum-intro-illustrated .sales-pill{
+ background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.65);
+ color:#fff;font-size:10px;font-weight:700;
+}
+#contenido .curriculum-intro-illustrated h3{color:#fff}
+#contenido .curriculum-intro-illustrated p{color:#fff;font-size:14px;line-height:1.6}
+@media(max-width:760px){
+ #contenido .curriculum-intro-illustrated{min-height:470px;padding:28px}
+ #contenido .curriculum-intro-copy{max-width:390px}
+ #contenido .curriculum-intro-illustrated h3{font-size:29px;max-width:330px}
+}
+@media(max-width:360px){
+ #contenido .curriculum-intro-illustrated{min-height:475px;padding:24px}
+ #contenido .curriculum-intro-illustrated h3{font-size:27px}
+}
