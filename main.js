@@ -62,8 +62,8 @@ if (carousel) {
   update(0);
 }
 
-const vipDeadline = document.getElementById('vip-offer-deadline');
-if (vipDeadline) {
+const vipCountdown = document.getElementById('vip-countdown-time');
+if (vipCountdown) {
   const key = 'la-reina-vip-primeiro-acesso-v1';
   const duration = 48 * 60 * 60 * 1000;
   let firstVisit = Date.now();
@@ -83,13 +83,8 @@ if (vipDeadline) {
   }
 
   const endsAt = firstVisit + duration;
-  const countdown = document.getElementById('vip-countdown-time');
+  const countdown = vipCountdown;
   const label = document.getElementById('vip-countdown-label');
-  const endDate = new Date(endsAt);
-  vipDeadline.dateTime = endDate.toISOString();
-  vipDeadline.textContent = new Intl.DateTimeFormat('es-MX', {
-    day: '2-digit', month: '2-digit', year: 'numeric'
-  }).format(endDate);
 
   let interval;
   function updateVipCountdown() {

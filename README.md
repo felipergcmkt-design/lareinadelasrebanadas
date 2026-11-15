@@ -2,7 +2,7 @@
 
 Sitio estático en español mexicano. Quiz de 3 preguntas en `/`, oferta en `/oferta` y páginas informativas en `/privacidad`, `/terminos` y `/contacto`. Publicación mediante la integración GitHub/Vercel; no requiere build.
 
-El correo de soporte informado por el titular es `soporte@lareinadelasrebanadas.shop`. Las respuestas del quiz permanecen en la memoria de la página. La oferta guarda la primera visita en el navegador para el contador. No hay Pixel de Meta en los archivos actuales ni un checkout activo: el botón de compra abre el diálogo de preparación existente.
+El correo de soporte informado por el titular es `soporte@lareinadelasrebanadas.shop`. Las respuestas del quiz permanecen en la memoria de la página. La oferta guarda la primera visita en el navegador para el contador. No hay Pixel de Meta en los archivos actuales ni un checkout activo: el botón de compra abre un resumen del Plan VIP. Falta conectar la URL real del checkout para completar el flujo de pago.
 
 ## Información pendiente del titular
 
