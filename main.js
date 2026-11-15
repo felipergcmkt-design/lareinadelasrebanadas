@@ -1,15 +1,16 @@
 document.getElementById('year').textContent = new Date().getFullYear();
-const launchDialog = document.getElementById('launch-dialog');
-document.querySelector('.launch-button').addEventListener('click', () => launchDialog.showModal());
-document.querySelectorAll('.dialog-close, .dialog-dismiss').forEach(button => {
-  button.addEventListener('click', () => launchDialog.close());
-});
-launchDialog.addEventListener('click', event => {
-  if (event.target === launchDialog) {
-    const bounds = launchDialog.getBoundingClientRect();
-    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) launchDialog.close();
-  }
-});
+// Preserva apenas os parâmetros de atribuição usados no checkout.
+const checkoutLink = document.getElementById('comprar-ahora');
+if (checkoutLink) {
+  const checkoutUrl = new URL(checkoutLink.href);
+  const campaignParams = new URLSearchParams(window.location.search);
+  const allowedParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id', 'src', 'sck'];
+  allowedParams.forEach(key => {
+    const value = campaignParams.get(key);
+    if (value && !checkoutUrl.searchParams.has(key)) checkoutUrl.searchParams.set(key, value);
+  });
+  checkoutLink.href = checkoutUrl.href;
+}
 
 const carousel = document.querySelector('.hero-carousel');
 if (carousel) {
