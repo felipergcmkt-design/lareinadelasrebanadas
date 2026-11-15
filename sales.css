@@ -125,3 +125,7 @@
  #contenido .curriculum-intro-illustrated{min-height:580px;padding:24px}
  #contenido .curriculum-intro-illustrated h3{font-size:27px}
 }
+
+/* Contraste do cardápio sobre o fundo marrom. */
+.sales-dark .flavor-menu article>span{color:#e9b6c5}
+.sales-dark .flavor-menu article{border-bottom-color:rgba(255,248,240,.18)}
