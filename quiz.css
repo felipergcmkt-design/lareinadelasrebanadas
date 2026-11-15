@@ -4,3 +4,5 @@
 @media(prefers-reduced-motion:reduce){.quiz-progress>span{transition:none}}
 
 #result-screen{text-align:center}#result-title{font-size:clamp(34px,5vw,48px);margin-bottom:35px;line-height:1.2}.result-cta{max-width:360px;margin:auto}.quiz-complete .quiz-header,.quiz-complete .quiz-footer{display:none}.quiz-complete .quiz-layout{min-height:100svh;align-items:center;padding-block:40px}
+
+.quiz-privacy.first-question{font-size:15px;font-weight:600}
