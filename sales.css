@@ -130,7 +130,9 @@
 .sales-dark .flavor-menu article>span{color:#e9b6c5}
 .sales-dark .flavor-menu article{border-bottom-color:rgba(255,248,240,.18)}
 
-/* Oferta VIP: fundo claro e acabamento dourado. */
+/* Oferta VIP: quadro branco e acabamento suave em rosa. */
 #oferta.sales-section{background:var(--cream)}
-#oferta .bundle-card{background:var(--cream);border:2px solid var(--gold);box-shadow:0 14px 40px rgba(184,138,56,.14)}
-#oferta .launch-button{border:2px solid var(--gold)}
+#oferta .bundle-card{background:#fff;border:1px solid #eedce2;box-shadow:0 12px 36px rgba(53,35,31,.08)}
+#oferta .bundle-card>h3{color:var(--chocolate)}
+#oferta .launch-button{border:0;background:var(--berry);color:#fff}
+#oferta .launch-button:hover{background:var(--berry-dark)}
