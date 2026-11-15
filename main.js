@@ -65,8 +65,8 @@ if (carousel) {
 
 const vipCountdown = document.getElementById('vip-countdown-time');
 if (vipCountdown) {
-  const key = 'la-reina-vip-primeiro-acesso-v1';
-  const duration = 48 * 60 * 60 * 1000;
+  const key = 'la-reina-vip-primeiro-acesso-1h-v2';
+  const duration = 60 * 60 * 1000;
   let firstVisit = Date.now();
 
   try {
@@ -90,12 +90,11 @@ if (vipCountdown) {
   let interval;
   function updateVipCountdown() {
     const total = Math.max(0, Math.ceil((endsAt - Date.now()) / 1000));
-    const days = Math.floor(total / 86400);
-    const hours = Math.floor((total % 86400) / 3600);
+    const hours = Math.floor(total / 3600);
     const minutes = Math.floor((total % 3600) / 60);
     const seconds = total % 60;
     const twoDigits = value => String(value).padStart(2, '0');
-    countdown.textContent = `${twoDigits(days)}d ${twoDigits(hours)}h ${twoDigits(minutes)}m ${twoDigits(seconds)}s`;
+    countdown.textContent = `${twoDigits(hours)}h ${twoDigits(minutes)}m ${twoDigits(seconds)}s`;
 
     if (total === 0) {
       label.textContent = 'Oferta finalizada';

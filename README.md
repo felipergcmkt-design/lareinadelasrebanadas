@@ -2,7 +2,7 @@
 
 Sitio estático en español mexicano. Quiz de 3 preguntas en `/`, oferta en `/oferta` y páginas informativas en `/privacidad`, `/terminos` y `/contacto`. Publicación mediante la integración GitHub/Vercel; no requiere build.
 
-El correo de soporte informado por el titular es `soporte@lareinadelasrebanadas.shop`. Las respuestas del quiz permanecen en la memoria de la página. La oferta guarda la primera visita en el navegador para el contador. No hay Pixel de Meta en los archivos actuales. El botón principal COMPRAR AHORA abre directamente el checkout de Hotmart: https://pay.hotmart.com/N108499007S. Los otros CTA de la oferta llevan a #comprar-ahora. No se carga el widget de Hotmart ni un diálogo intermedio. Se conservan los parámetros UTM, SRC y SCK presentes en la URL; no se reenvían otros parámetros del sitio.
+El correo de soporte informado por el titular es `soporte@lareinadelasrebanadas.shop`. Las respuestas del quiz permanecen en la memoria de la página. La oferta guarda la primera visita en el navegador para un contador de 1 hora. La cuenta continúa al recargar la página y no se reinicia al llegar a cero. No hay Pixel de Meta en los archivos actuales. El botón principal COMPRAR AHORA abre directamente el checkout de Hotmart: https://pay.hotmart.com/N108499007S. Los otros CTA de la oferta llevan a #comprar-ahora. No se carga el widget de Hotmart ni un diálogo intermedio. Se conservan los parámetros UTM, SRC y SCK presentes en la URL; no se reenvían otros parámetros del sitio.
 
 ## Información pendiente del titular
 
