@@ -1,0 +1,48 @@
+/* Páginas informativas y pie legal compartido. */
+.site-legal-footer{display:block;background:var(--cream);border-top:1px solid var(--line);padding:30px 0;color:var(--muted)}
+.site-legal-inner{width:min(1100px,calc(100% - 48px));margin:0 auto;text-align:center}
+.site-legal-footer p{margin:0 0 12px;color:var(--muted);font-size:12px;line-height:1.75}
+.site-legal-footer .site-legal-brand{font-size:16px;font-weight:700;color:var(--chocolate)}
+.site-legal-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;margin:0 0 12px;font-size:14px;font-weight:600}
+.site-legal-nav a{display:inline-flex;align-items:center;min-height:38px}
+.site-legal-footer a,.offer-refund-help a{color:var(--berry);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.site-legal-footer a:hover,.offer-refund-help a:hover{color:var(--berry-dark)}
+.site-legal-disclaimer{max-width:920px;margin-left:auto!important;margin-right:auto!important}
+.site-legal-footer .site-legal-copyright{margin-bottom:0}
+.quiz-page .site-legal-footer{flex-shrink:0}
+.quiz-complete .site-legal-footer{display:block}
+.offer-refund-help{max-width:540px;margin:14px auto 0;text-align:center;font-size:12px;line-height:1.7;color:var(--muted);overflow-wrap:anywhere}
+.offer-guarantee a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.legal-page{min-height:100svh;display:flex;flex-direction:column}
+.legal-header{width:min(1100px,calc(100% - 48px));margin:0 auto;padding:23px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.legal-header .brand{font-family:var(--sans);font-weight:700;font-size:19px}
+.legal-back{color:var(--berry);font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.legal-main{width:min(820px,calc(100% - 48px));margin:0 auto;padding:52px 0 64px;flex:1}
+.legal-main h1,.legal-main h2,.legal-main h3{font-family:var(--sans);font-weight:700;color:var(--chocolate);letter-spacing:-.025em}
+.legal-main h1{font-size:clamp(32px,5vw,48px);line-height:1.15;margin-bottom:16px}
+.legal-main .legal-updated{font-size:13px;margin-bottom:32px;color:var(--muted)}
+.legal-main h2{font-size:22px;line-height:1.35;margin:32px 0 12px}
+.legal-main h3{font-size:18px;line-height:1.4}
+.legal-main p,.legal-main li{font-size:16px;line-height:1.8;color:var(--chocolate)}
+.legal-main p{margin:0 0 16px}
+.legal-main ul,.legal-main ol{padding-left:23px;margin:0 0 20px}
+.legal-main li{margin-bottom:8px}
+.legal-main a:not(.button){color:var(--berry);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.legal-main section{scroll-margin-top:24px}
+.legal-highlight{padding:22px 24px;background:#fff;border:1px solid #eedce2;border-radius:14px;margin:24px 0}
+.legal-highlight p:last-child{margin-bottom:0}
+.legal-main .button{max-width:100%;overflow-wrap:anywhere}
+.legal-email{display:block;font-size:clamp(16px,3.8vw,22px);font-weight:700;line-height:1.6;margin-bottom:18px;overflow-wrap:anywhere}
+@media(max-width:760px){
+ .site-legal-footer{padding:24px 0}
+ .site-legal-inner{width:calc(100% - 40px)}
+ .site-legal-nav{gap:2px 16px;font-size:13px}
+ .site-legal-footer p{font-size:12px;line-height:1.7}
+ .legal-header{width:calc(100% - 40px);padding:20px 0;align-items:flex-start;flex-direction:column;gap:16px}
+ .legal-header .brand{font-size:17px;gap:10px}
+ .legal-main{width:calc(100% - 40px);padding:32px 0 44px}
+ .legal-main h2{font-size:21px}
+ .legal-main p,.legal-main li{font-size:15px}
+ .legal-highlight{padding:20px}
+ .offer-refund-help{font-size:12px}
+}
