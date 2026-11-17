@@ -27,7 +27,7 @@
   function setup() {
     if (!document.body.classList.contains('sales-page')) return;
     var product = {
-      content_name:'La Reina de las Rebanadas - Plan VIP',
+      content_name:'La Reina de las Rebanadas - Paquete Premium',
       content_ids:['rebanadas-vip'],
       content_type:'product',
       value:99,
