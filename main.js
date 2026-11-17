@@ -65,43 +65,39 @@ if (carousel) {
 
 const vipCountdown = document.getElementById('vip-countdown-time');
 if (vipCountdown) {
-  const key = 'la-reina-vip-primeiro-acesso-1h-v2';
-  const duration = 60 * 60 * 1000;
-  let firstVisit = Date.now();
-
+  const key = 'la-reina-vip-countdown-12m-v3';
+  const duration = 12 * 60 * 1000;
+  let endsAt = Date.now() + duration;
+  let storage;
   try {
-    const saved = Number(localStorage.getItem(key));
-    if (Number.isFinite(saved) && saved > 0) firstVisit = saved;
-    else localStorage.setItem(key, String(firstVisit));
+    storage = localStorage;
+    const saved = Number(storage.getItem(key));
+    if (Number.isFinite(saved) && saved > Date.now() && saved <= endsAt) endsAt = saved;
+    storage.setItem(key, String(endsAt));
   } catch {
-    try {
-      const saved = Number(sessionStorage.getItem(key));
-      if (Number.isFinite(saved) && saved > 0) firstVisit = saved;
-      else sessionStorage.setItem(key, String(firstVisit));
-    } catch {
-      // O relógio continua nesta visita se o navegador bloquear o armazenamento.
-    }
+    storage = null;
   }
 
-  const endsAt = firstVisit + duration;
-  const countdown = vipCountdown;
   const label = document.getElementById('vip-countdown-label');
-
-  let interval;
   function updateVipCountdown() {
-    const total = Math.max(0, Math.ceil((endsAt - Date.now()) / 1000));
+    const now = Date.now();
+    if (now >= endsAt) {
+      endsAt = now + duration;
+      try {
+        if (storage) storage.setItem(key, String(endsAt));
+      } catch {
+        // El contador continúa aunque el almacenamiento no esté disponible.
+      }
+    }
+    const total = Math.ceil((endsAt - now) / 1000);
     const hours = Math.floor(total / 3600);
     const minutes = Math.floor((total % 3600) / 60);
     const seconds = total % 60;
     const twoDigits = value => String(value).padStart(2, '0');
-    countdown.textContent = `${twoDigits(hours)}h ${twoDigits(minutes)}m ${twoDigits(seconds)}s`;
-
-    if (total === 0) {
-      label.textContent = 'Oferta finalizada';
-      if (interval) clearInterval(interval);
-    }
+    vipCountdown.textContent = `${twoDigits(hours)}h ${twoDigits(minutes)}m ${twoDigits(seconds)}s`;
+    if (label) label.textContent = 'TERMINA EN';
   }
 
   updateVipCountdown();
-  if (endsAt > Date.now()) interval = setInterval(updateVipCountdown, 1000);
+  setInterval(updateVipCountdown, 1000);
 }
