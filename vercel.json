@@ -28,5 +28,17 @@
       ]
     }
   ],
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/oferta",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/oferta.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }
