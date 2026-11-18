@@ -138,7 +138,7 @@
 #oferta .launch-button:hover{background:#11652f}
 
 .sales-section.sales-testimonials {
-  padding: 20px 0 34px;
+  padding: 20px 0 18px;
   background: var(--cream);
 }
 
@@ -154,9 +154,10 @@
   overscroll-behavior-inline: contain;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
   scrollbar-color: var(--berry) var(--rose);
   margin: 0;
-  padding: 0 0 10px;
+  padding: 0 0 6px;
   list-style: none;
 }
 
@@ -174,34 +175,7 @@
   border-radius: 16px;
 }
 
-.sales-testimonials-controls:not([hidden]) {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.sales-testimonials-controls button {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 1px solid var(--berry);
-  border-radius: 50%;
-  background: var(--cream);
-  color: var(--berry);
-  font: 700 22px/1 var(--sans);
-  cursor: pointer;
-}
-
-.sales-testimonials-controls button[aria-disabled="true"] {
-  opacity: .45;
-  cursor: default;
-}
-
-.sales-testimonials-list:focus-visible,
-.sales-testimonials-controls button:focus-visible {
+.sales-testimonials-list:focus-visible {
   outline: 2px solid var(--berry);
   outline-offset: 3px;
 }
