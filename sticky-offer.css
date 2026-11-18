@@ -43,13 +43,15 @@
 .floating-offer__prices { display: flex; align-items: baseline; gap: 13px; }
 .floating-offer__old {
   color: var(--muted);
+  font-family: var(--sans);
+  font-weight: 700;
   font-size: 13px;
   text-decoration: line-through;
   white-space: nowrap;
 }
 .floating-offer__now {
   color: var(--berry-dark);
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 31px;
   font-weight: 700;
   letter-spacing: -.04em;
