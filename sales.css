@@ -137,24 +137,33 @@
 #oferta .launch-button{border:0;background:#16803c;color:#fff}
 #oferta .launch-button:hover{background:#11652f}
 
-.sales-testimonials {
+.sales-section.sales-testimonials {
+  padding: 20px 0 34px;
   background: var(--cream);
-  border-top: 1px solid var(--line);
+}
+
+.sales-testimonials .sales-heading {
+  margin-bottom: 16px;
 }
 
 .sales-testimonials-list {
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: center;
-  gap: 18px;
+  gap: 14px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-color: var(--berry) var(--rose);
   margin: 0;
-  padding: 0;
+  padding: 0 0 10px;
   list-style: none;
 }
 
 .sales-testimonials-list li {
-  width: min(100%, 456px);
+  flex: 0 0 92%;
+  min-width: 0;
+  scroll-snap-align: start;
 }
 
 .sales-testimonials-list img {
@@ -163,17 +172,54 @@
   height: auto;
   border: 1px solid var(--line);
   border-radius: 16px;
-  box-shadow: 0 8px 24px #35231f12;
 }
 
-@media (min-width: 761px) {
+.sales-testimonials-controls:not([hidden]) {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.sales-testimonials-controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--berry);
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--berry);
+  font: 700 22px/1 var(--sans);
+  cursor: pointer;
+}
+
+.sales-testimonials-controls button[aria-disabled="true"] {
+  opacity: .45;
+  cursor: default;
+}
+
+.sales-testimonials-list:focus-visible,
+.sales-testimonials-controls button:focus-visible {
+  outline: 2px solid var(--berry);
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
   .sales-testimonials-list li {
-    width: calc((100% - 18px) / 2);
+    flex-basis: calc((100% - 28px) / 2);
   }
 }
 
 @media (min-width: 1024px) {
   .sales-testimonials-list li {
-    width: calc((100% - 36px) / 3);
+    flex-basis: calc((100% - 42px) / 3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sales-testimonials-list {
+    scroll-behavior: auto;
   }
 }
