@@ -96,34 +96,90 @@
 
 
 /* Livros abertos nas três etapas do programa. */
-#contenido .curriculum-intro-illustrated{
- position:relative;isolation:isolate;display:flex;align-items:flex-start;
- min-height:530px;overflow:hidden;background:var(--berry);color:#fff;
+#contenido .curriculum-intro-illustrated {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0;
+  background: var(--cream);
+  border-right: 1px solid var(--line);
 }
-#contenido .curriculum-book{
- position:absolute;inset:0;z-index:-2;width:100%;height:100%;
- object-fit:cover;object-position:center bottom;
+
+#contenido .curriculum-intro-copy {
+  padding: clamp(22px, 3vw, 34px);
 }
-#contenido .curriculum-intro-illustrated::after{
- content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
- background:linear-gradient(180deg,rgba(169,35,80,.99) 0%,rgba(169,35,80,.97) 180px,rgba(169,35,80,.94) 260px,rgba(169,35,80,.30) 355px,rgba(169,35,80,.03) 100%);
+
+#contenido .curriculum-intro-illustrated .sales-pill {
+  background: var(--berry);
+  border-color: var(--berry);
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: .07em;
 }
-#contenido .curriculum-intro-copy{position:relative;max-width:370px}
-#contenido .curriculum-intro-illustrated .sales-pill{
- background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.65);
- color:#fff;font-size:10px;font-weight:700;
+
+#contenido .curriculum-intro-illustrated h3 {
+  margin: 14px 0 9px;
+  color: var(--berry-dark);
+  font-size: clamp(25px, 2.7vw, 32px);
+  text-wrap: balance;
 }
-#contenido .curriculum-intro-illustrated h3{color:#fff}
-#contenido .curriculum-intro-illustrated p{color:#fff;font-size:14px;line-height:1.6}
-@media(max-width:760px){
- #contenido .curriculum-intro-illustrated{min-height:clamp(580px,calc(250px + 68vw),780px);padding:28px}
- #contenido .curriculum-book{inset:auto 0 0;height:auto;object-fit:contain}
- #contenido .curriculum-intro-copy{max-width:390px}
- #contenido .curriculum-intro-illustrated h3{font-size:29px;max-width:330px}
+
+#contenido .curriculum-intro-illustrated p {
+  color: var(--berry-dark);
+  font-size: 15px;
+  line-height: 1.5;
 }
-@media(max-width:360px){
- #contenido .curriculum-intro-illustrated{min-height:580px;padding:24px}
- #contenido .curriculum-intro-illustrated h3{font-size:27px}
+
+#contenido .curriculum-book {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: auto;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+#contenido .curriculum-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px clamp(22px, 3.6vw, 44px);
+}
+
+#contenido .curriculum-items article {
+  gap: 16px;
+  padding: 22px 0;
+}
+
+#contenido .curriculum-items article > span {
+  flex: 0 0 22px;
+  font-size: 12px;
+}
+
+#contenido .curriculum-items h4 {
+  font-size: clamp(16px, 1.75vw, 19px);
+  line-height: 1.3;
+}
+
+#contenido .curriculum-items p {
+  font-size: clamp(14px, 1.55vw, 16px);
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  #contenido .curriculum-intro-illustrated {
+    border-right: 0;
+  }
+
+  #contenido .curriculum-items {
+    padding: 5px 22px;
+  }
+
+  #contenido .curriculum-items article {
+    gap: 12px;
+    padding: 18px 0;
+  }
 }
 
 /* Contraste do cardápio sobre o fundo marrom. */
