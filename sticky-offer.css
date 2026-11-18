@@ -1,0 +1,98 @@
+/* Barra de oferta flutuante: mantém as cores e fontes do site, sem alterar o checkout. */
+.floating-offer {
+  position: fixed;
+  z-index: 80;
+  inset: auto 0 0;
+  padding: 12px 22px calc(12px + env(safe-area-inset-bottom, 0px));
+  border-top: 2px solid #e7c8d3;
+  background: rgba(255, 248, 240, .98);
+  box-shadow: 0 -10px 32px rgba(53, 35, 31, .14);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(105%);
+  transition: transform .25s ease, opacity .25s ease, visibility .25s ease;
+  font-family: var(--sans);
+}
+.floating-offer.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.floating-offer__inner {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.floating-offer__copy { min-width: 0; }
+.floating-offer__label {
+  display: block;
+  color: var(--berry);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .10em;
+  line-height: 1.4;
+  margin-bottom: 3px;
+}
+.floating-offer__prices { display: flex; align-items: baseline; gap: 13px; }
+.floating-offer__old {
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: line-through;
+  white-space: nowrap;
+}
+.floating-offer__now {
+  color: var(--berry-dark);
+  font-family: var(--serif);
+  font-size: 31px;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  line-height: 1.12;
+  white-space: nowrap;
+}
+.floating-offer__now small { font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 0; }
+.floating-offer__button {
+  min-height: 51px;
+  min-width: 220px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  padding: 13px 23px;
+  border-radius: 10px;
+  background: #16803c;
+  color: #fff;
+  font: 800 13px/1.2 var(--sans);
+  letter-spacing: .025em;
+  text-align: center;
+  box-shadow: 0 5px 12px rgba(22, 128, 60, .18);
+  transition: background .2s ease, transform .2s ease;
+}
+.floating-offer__button:hover { background: #11652f; color: #fff; transform: translateY(-1px); }
+.floating-offer__button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.floating-offer__arrow { font-size: 20px; line-height: .8; }
+@media (max-width: 640px) {
+  .floating-offer { padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px)); }
+  .floating-offer__inner { gap: 12px; }
+  .floating-offer__label { font-size: 9px; letter-spacing: .03em; }
+  .floating-offer__prices { flex-direction: column; align-items: flex-start; gap: 0; }
+  .floating-offer__old { font-size: 10px; line-height: 1.2; }
+  .floating-offer__now { font-size: 27px; }
+  .floating-offer__now small { font-size: 11px; }
+  .floating-offer__button { min-width: 0; min-height: 48px; padding: 12px 15px; font-size: 11px; gap: 8px; }
+}
+@media (max-width: 365px) {
+  .floating-offer__label { display: none; }
+  .floating-offer__button { padding: 12px 11px; font-size: 10px; }
+  .floating-offer__now { font-size: 25px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .floating-offer, .floating-offer__button { transition: none; }
+}
