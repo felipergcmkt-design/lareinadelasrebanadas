@@ -136,3 +136,44 @@
 #oferta .bundle-card>h3{color:var(--chocolate)}
 #oferta .launch-button{border:0;background:#16803c;color:#fff}
 #oferta .launch-button:hover{background:#11652f}
+
+.sales-testimonials {
+  background: var(--cream);
+  border-top: 1px solid var(--line);
+}
+
+.sales-testimonials-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sales-testimonials-list li {
+  width: min(100%, 456px);
+}
+
+.sales-testimonials-list img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px #35231f12;
+}
+
+@media (min-width: 761px) {
+  .sales-testimonials-list li {
+    width: calc((100% - 18px) / 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sales-testimonials-list li {
+    width: calc((100% - 36px) / 3);
+  }
+}
