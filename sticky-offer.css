@@ -32,12 +32,7 @@
 }
 .floating-offer__copy { min-width: 0; }
 .floating-offer__label {
-  display: block;
-  color: var(--berry);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .10em;
-  line-height: 1.4;
+  padding: 3px 7px;
   margin-bottom: 3px;
 }
 .floating-offer__prices { display: flex; align-items: baseline; gap: 13px; }
@@ -83,7 +78,6 @@
 @media (max-width: 640px) {
   .floating-offer { padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px)); }
   .floating-offer__inner { gap: 12px; }
-  .floating-offer__label { font-size: 9px; letter-spacing: .03em; }
   .floating-offer__prices { flex-direction: column; align-items: flex-start; gap: 0; }
   .floating-offer__old { font-size: 10px; line-height: 1.2; }
   .floating-offer__now { font-size: 27px; }
@@ -91,7 +85,6 @@
   .floating-offer__button { min-width: 0; min-height: 48px; padding: 12px 15px; font-size: 11px; gap: 8px; }
 }
 @media (max-width: 365px) {
-  .floating-offer__label { display: none; }
   .floating-offer__button { padding: 12px 11px; font-size: 10px; }
   .floating-offer__now { font-size: 25px; }
 }
