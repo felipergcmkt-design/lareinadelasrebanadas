@@ -253,3 +253,8 @@
     scroll-behavior: auto;
   }
 }
+
+.sales-page :is(.button, .floating-offer__button, button, summary):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -4px;
+}
